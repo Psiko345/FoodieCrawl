@@ -27,19 +27,40 @@
         <div class="mdc-line-ripple"></div>
     </div> -->
 
-    <label class="mdc-text-field mdc-text-field--filled username">
-        <span class="mdc-text-field__ripple"></span>
-        <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="foodType">
-        <span class="mdc-floating-label" id="foodType">Type of Food</span>
-        <span class="mdc-line-ripple"></span>
-    </label>
+    <div id="searchDiv">
 
-    <label class="mdc-text-field mdc-text-field--filled username">
-        <span class="mdc-text-field__ripple"></span>
-        <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="distance">
-        <span class="mdc-floating-label" id="distancel">Distance</span>
-        <span class="mdc-line-ripple"></span>
-    </label>
+        <label class="mdc-text-field mdc-text-field--filled username">
+            <span class="mdc-text-field__ripple"></span>
+            <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="location">
+            <span class="mdc-floating-label" id="location">Your Location</span>
+            <span class="mdc-line-ripple"></span>
+        </label>
+
+        <label class="mdc-text-field mdc-text-field--filled username">
+            <span class="mdc-text-field__ripple"></span>
+            <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="foodType">
+            <span class="mdc-floating-label" id="foodType">Type of Food</span>
+            <span class="mdc-line-ripple"></span>
+        </label>
+
+        <label class="mdc-text-field mdc-text-field--filled username">
+            <span class="mdc-text-field__ripple"></span>
+            <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="distance">
+            <span class="mdc-floating-label" id="distancel">Distance</span>
+            <span class="mdc-line-ripple"></span>
+        </label>
+
+    </div>
+
+    <div id="resultsDiv">
+
+        <div id="resultOne"></div>
+        <div id="resultTwo"></div>
+        <div id="resultThree"></div>
+
+    </div>
+
+
 
     <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
