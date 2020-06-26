@@ -6,56 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Foodie Crawl</title>
 
-    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
 </head>
-
-
 
 <body>
 
-    <div id="mainBody">
+    <div class="container">
 
-        <div class="mdc-top-app-bar mdc-top-app-bar__row" id="header">
+        <div class="row col s12 center-align white-text blue darken-4" id="header">
             <h2>Foodie Crawl</h2>
         </div>
 
-        <div id="searchDiv">
+        <br>
 
-            <label class="mdc-text-field mdc-text-field--filled username">
-                <span class="mdc-text-field__ripple"></span>
-                <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="location">
-                <span class="mdc-floating-label" id="location">Your Location</span>
-                <span class="mdc-line-ripple"></span>
-            </label>
-
-            <label class="mdc-text-field mdc-text-field--filled username">
-                <span class="mdc-text-field__ripple"></span>
-                <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="foodType">
-                <span class="mdc-floating-label" id="foodType">Type of Food</span>
-                <span class="mdc-line-ripple"></span>
-            </label>
-
-            <label class="mdc-text-field mdc-text-field--filled username">
-                <span class="mdc-text-field__ripple"></span>
-                <input type="text" class="mdc-text-field__input" aria-labelledby="username-label" name="distance">
-                <span class="mdc-floating-label" id="distancel">Distance</span>
-                <span class="mdc-line-ripple"></span>
-            </label>
+        <div class="row" id="paramDiv">
+            <div class="col s4 card-panel hoverable">
+                <input placeholder="location" id="location" type="text">
+                <label for="location"></label>
+            </div>
+            <div class="col s4 card-panel hoverable">
+                <input placeholder="cuisine" id="cuisine" type="text">
+                <label for="cuisine"></label>
+            </div>
+            <div class="col s4 card-panel hoverable">
+                <input placeholder="distance" id="distance" type="text">
+                <label for="distance"></label>
+            </div>
 
         </div>
 
-        <div id="resultsDiv">
+        <br><br>
+        <div class="divider"></div>
+        <br><br><br>
 
-            <div id="resultOne">Results One</div>
-            <div id="resultTwo">Results Two</div>
-            <div id="resultThree">Results Three</div>
+        <div class="row" id="resultsDiv">
+
+            <div class="col s4 card-panel" id="resultOne">Results One</div>
+            <div class="col s4 card-panel" id="resultTwo">Results Two</div>
+            <div class="col s4 card-panel" id="resultThree">Results Three</div>
 
         </div>
 
     </div>
-
-    <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
 
     <script>
 
