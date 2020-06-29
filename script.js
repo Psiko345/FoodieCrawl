@@ -34,3 +34,8 @@ function getNutrition() {
     console.log(response);
   });
 }
+
+
+function handleCuisineSearch() {
+  $("#cuisine").
+}
