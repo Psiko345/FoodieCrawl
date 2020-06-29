@@ -6,6 +6,9 @@ window.onload = function () {
 // Zomato
 function getZomato() {
   // Sydney id: 260
+  // "https://developers.zomato.com/api/v2.1/locations?query=sydney" -- location api - to get lat, lon
+  // "https://developers.zomato.com/api/v2.1/search?entity_id=260&entity_type=city&count=3&lat=-33.865&lon=151.2094&radius=500&cuisines=Thai&sort=real_distance&order=desc"
+  // -- search api - gets everything, inputs are: entity id, entity_type, count, lat, lon, radius, cuisines, sort:real_distance, order:desc
   const zomatoQueryURL =
     "https://developers.zomato.com/api/v2.1/cuisines?city_id=260";
 
@@ -35,7 +38,6 @@ function getNutrition() {
   });
 }
 
-
 function handleCuisineSearch() {
-  $("#cuisine").
+  //$("#cuisine").
 }
