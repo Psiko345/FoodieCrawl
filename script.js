@@ -15,15 +15,11 @@ function getLocation() {
         method: "GET",
         headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
     }).then(function (response) {
-        console.log(response);
         const entity_id = response.location_suggestions[0].entity_id;
         const entity_type = response.location_suggestions[0].entity_type;
-        const lat = response.location_suggestions[0].entity_type;
-        const lon = response.location_suggestions[0].entity_type;
-        console.log(entity_id, entity_type);
-        const cuisine = $("#cuisine").val();
 
-        // get restaurants
+        // Getting restaurants
+        const cuisine = $("#cuisine").val();
         const searchURL =
             "https://developers.zomato.com/api/v2.1/search?entity_id=" +
             entity_id +
@@ -37,7 +33,6 @@ function getLocation() {
             method: "GET",
             headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
         }).then(function (response) {
-            console.log(response);
             let image;
             let title;
             let address;
@@ -55,8 +50,6 @@ function getLocation() {
                 const cardContent = $("<div>").addClass("card-title");
                 const cardAction = $("<div>").addClass("card-action");
 
-                console.log(image, title, address, website);
-
                 cardImage
                     .append($("<img>").attr("src", image))
                     .append($("<span>").addClass("card-title").text(title));
@@ -70,6 +63,16 @@ function getLocation() {
                 card.append(cardImage, cardContent, cardAction);
                 wrapper.append(card);
                 $("#search-results").append(wrapper);
+            }
+
+            // Getting lat and lon for the rendered restaurants
+            let lat;
+            let lon;
+            for (let i = 0; i < 3; i++) {
+                lat = response.restaurants[i].restaurant.location.latitude;
+                lon = response.restaurants[i].restaurant.location.longitude;
+
+                console.log(lat, lon);
             }
         });
     });
