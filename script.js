@@ -1,101 +1,76 @@
-window.onload = function () {
-  //getNutrition();
-  //getZomato();
-
-};
-
-// Zomato
-function getZomato(lat, long, cuisine) {
-  // Sydney id: 260
-  // "https://developers.zomato.com/api/v2.1/locations?query=sydney" -- location api - to get lat, lon
-  // "https://developers.zomato.com/api/v2.1/search?entity_id=260&entity_type=city&count=3&lat=-33.865&lon=151.2094&radius=500&cuisines=Thai&sort=real_distance&order=desc"
-  // -- search api - gets everything, inputs are: entity id, entity_type, count, lat, lon, radius, cuisines, sort:real_distance, order:desc
-
-
-
-  //const zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?radius=1&cuisines=" + cuisine;
-
-  const zomatoQueryURL = "https://developers.zomato.com/api/v2.1/search?lat=" + lat + "&lon=" + long + "&radius=500&cuisines=" + cuisine;
-
-  $.ajax({
-    url: zomatoQueryURL,
-    method: "GET",
-    headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
-  }).then(function (response) {
-    console.log(response);
-  });
-}
-
-function handleCuisineSearch() {
-  //$("#cuisine").
-}
-
-$("#submit").on("click", function (event) {
-  let cuisineInput = $("#cuisine").val();
-  let locationInput = $("#location").val();
-
-  let locationURL = "https://api.opencagedata.com/geocode/v1/json?q=" + locationInput + "&countrycode=au" + "&key=e9f054decbe14482af0c7673ab8960a0&limit=1";
-  console.log(locationURL);
-
-  $.ajax({
-    url: locationURL,
-    method: "GET",
-  }).then(function (response) {
-    console.log(response.results[0].geometry.lat);
-    console.log(response.results[0].geometry.lng);
-    let latCoord = response.results[0].geometry.lat;
-    let lngCoord = response.results[0].geometry.lng;
-
-    getZomato(latCoord, lngCoord, cuisineInput);
-  });
-
+$("#submit").on("click", (event) => {
+    event.preventDefault();
+    $("#welcome-page").addClass("hide");
+    $("#card").removeClass("hide");
+    getLocation();
 });
 
+function getLocation() {
+    const locationInput = $("#location").val();
+    const locationURL =
+        "https://developers.zomato.com/api/v2.1/locations?query=" +
+        locationInput;
+    $.ajax({
+        url: locationURL,
+        method: "GET",
+        headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
+    }).then(function (response) {
+        console.log(response);
+        const entity_id = response.location_suggestions[0].entity_id;
+        const entity_type = response.location_suggestions[0].entity_type;
+        const lat = response.location_suggestions[0].entity_type;
+        const lon = response.location_suggestions[0].entity_type;
+        console.log(entity_id, entity_type);
+        const cuisine = $("#cuisine").val();
 
-// //Location
-// $("#submit").on("click", function (event) {
+        // get restaurants
+        const searchURL =
+            "https://developers.zomato.com/api/v2.1/search?entity_id=" +
+            entity_id +
+            "&entity_type=" +
+            entity_type +
+            "&q=" +
+            cuisine +
+            "&sort=real_distance&order=desc";
+        $.ajax({
+            url: searchURL,
+            method: "GET",
+            headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
+        }).then(function (response) {
+            console.log(response);
+            let image;
+            let title;
+            let address;
+            let website;
 
+            for (let i = 0; i < 3; i++) {
+                image = response.restaurants[i].restaurant.featured_image;
+                title = response.restaurants[i].restaurant.name;
+                address = response.restaurants[i].restaurant.location.address;
+                website = response.restaurants[i].restaurant.url;
 
-//   let locationURL = "https://api.opencagedata.com/geocode/v1/json?q=" + locationInput + "&countrycode=au" + "&key=e9f054decbe14482af0c7673ab8960a0&limit=1";
-//   console.log(locationURL);
+                const wrapper = $("<div>").addClass("col s12 m4");
+                const card = $("<div>").addClass("card");
+                const cardImage = $("<div>").addClass("card-image");
+                const cardContent = $("<div>").addClass("card-title");
+                const cardAction = $("<div>").addClass("card-action");
 
-//   $.ajax({
-//     url: locationURL,
-//     method: "GET",
-//   }).then(function (response) {
-//     console.log(response.results[0].geometry.lat);
-//     console.log(response.results[0].geometry.lng);
-//     let latCoord = response.results[0].geometry.lat;
-//     let lngCoord = response.results[0].geometry.lng;
-//   });
-// });
+                console.log(image, title, address, website);
 
+                cardImage
+                    .append($("<img>").attr("src", image))
+                    .append($("<span>").addClass("card-title").text(title));
 
+                cardContent.append($("<p>").text(address));
 
+                cardAction.append(
+                    $("<a>").attr("href", website).text("Let's Crawl")
+                );
 
-// const zomatoQueryURL =
-//   "https://developers.zomato.com/api/v2.1/search?radius=1&cuisines=" + cuisine;
-// $.ajax({
-//   url: zomatoQueryURL,
-//   method: "GET",
-//   headers: { "user-key": "1a1c38e54e42f2ec4d53164ce7ba37ed" },
-// }).then(function (response) {
-//   console.log(response);
-// });
-
-// // Nutritionix
-// function getNutrition() {
-//   const nutritionixURL =
-//     "https://nutritionix-api.p.rapidapi.com/v1_1/search/mcdonalds?fields=nf_calories%252Cnf_total_fat";
-
-//   $.ajax({
-//     url: nutritionixURL,
-//     method: "GET",
-//     headers: {
-//       "x-rapidapi-host": "nutritionix-api.p.rapidapi.com",
-//       "x-rapidapi-key": "1a2458beb0mshc0c5065ac438661p1dc054jsnb4bee91478de",
-//     },
-//   }).then(function (response) {
-//     console.log(response);
-//   });
-// }
+                card.append(cardImage, cardContent, cardAction);
+                wrapper.append(card);
+                $("#search-results").append(wrapper);
+            }
+        });
+    });
+}
