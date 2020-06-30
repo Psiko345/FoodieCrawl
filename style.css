@@ -1,1 +1,13 @@
-/* made some comments for conflict testing */
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  .card-title card-content z-depth-5 {
+      height: 500px;
+  }
