@@ -52,7 +52,7 @@ function getLocation() {
                 const wrapper = $("<div>").addClass("col s12 m4");
                 const card = $("<div>").addClass("card");
                 const cardImage = $("<div>").addClass("card-image");
-                const cardContent = $("<div>").addClass("card-title");
+                const cardContent = $("<div>").addClass("card-title card-content z-depth-5");
                 const cardAction = $("<div>").addClass("card-action");
 
                 console.log(image, title, address, website);
