@@ -7,3 +7,7 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+  .card-title card-content z-depth-5 {
+      height: 500px;
+  }
