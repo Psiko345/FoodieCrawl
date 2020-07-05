@@ -16,15 +16,31 @@
 
 <body>
     <header>
-        <nav>
-            <div class="nav-wrapper container">
-                <i class="fas fa-hamburger"><span href="#" class="brand-logo"
+        <nav id="navTop">
+            <div class="nav-wrapper container transparent">
+                <i class="fas fa-hamburger red-text text-lighten-2"><span href="#"
+                        class="brand-logo red-text text-lighten-2"
                         style="font-family: 'Indie Flower', cursive; font-size: 50px; padding-left: 20px;">FoodieCrawl</span></i>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#" class="red-text text-lighten-2">Home</a></li>
+                    <li><a href="#" class="red-text text-lighten-2">Services</a></li>
+                    <li><a href="#" class="red-text text-lighten-2">About Us</a></li>
+                    <li><a href="#" class="red-text text-lighten-2">Contact Us</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav id="navBottom">
+            <div class="nav-wrapper container">
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                    <li><a href="#" class="fab fa-facebook"></a></li>
+                    <li><a href="#" class="fab fa-instagram"></a></li>
+                    <li><a href="#" class="fab fa-twitter"></a></li>
+                    <li><a href="#" class="fab fa-snapchat"></a></li>
+                    <li><a href="#" class="fab fa-youtube"></a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <a class="waves-effect waves-light btn amber darken-3">Partner</a>
+                    <a class="waves-effect waves-light btn amber darken-3">Newsletter</a>
                 </ul>
             </div>
         </nav>
@@ -45,11 +61,15 @@
             </div>
 
             <div class="row" id="paramDiv">
+
                 <div class="col s12 m6 card-panel hoverable" style="margin-left: -20px;">
+                    <h2>Crawl Cuisine:</h2>
                     <label for="cuisine"></label>
                     <input placeholder="Japanese; Thai; Modern Australia" id="cuisine" type="text" />
                 </div>
+
                 <div class="col s12 m6 card-panel hoverable" style="margin-right: -20px;">
+                    <h2>Crawl Area:</h2>
                     <label for="location"></label>
                     <input placeholder="Waterloo, Sydney" id="location" type="text" />
                 </div>

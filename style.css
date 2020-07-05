@@ -18,24 +18,30 @@ main {
     width: 100%;
 }
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 
-  #welcome-page {
-    background: url(assets/FoodieCrawlBackground_1.jpg) no-repeat center center fixed; 
-    background-size: cover;
-    margin-top: -25px;
-    margin-bottom: -25px;
-    height: 50%;
-  }
+#welcome-page {
+  background: url(assets/FoodieCrawlBackground_1.jpg) no-repeat center center fixed; 
+  background-size: auto;
+  background-position: top;
+  margin-top: -25px;
+  margin-bottom: -25px;
+  height: 50%;
+}
 
-  nav {
-    height: 100px;
-    line-height: 100px;
-  }
+#navTop {
+  height: 100px;
+  line-height: 100px;
+  background-color: transparent !important;
+}
 
-  #mainContainer {
-      
+h2 {
+  text-align: center;
+  font-family: 'Indie Flower', cursive; 
+  font-size: 30px; 
+  padding-left: 20px; 
+  color: rgb(238, 110, 115);
   }
