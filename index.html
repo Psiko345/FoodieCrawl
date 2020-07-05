@@ -71,7 +71,7 @@
                 <div class="col s12 m6 card-panel hoverable" style="margin-right: -20px;">
                     <h2>Crawl Area:</h2>
                     <label for="location"></label>
-                    <input placeholder="Waterloo, Sydney" id="location" type="text" />
+                    <input placeholder="Suburb, City/State" id="location" type="text" />
                 </div>
             </div>
 
@@ -88,7 +88,15 @@
 
     <main class="container hide" id="card">
         <div class="row p3" id="search-results"></div>
-        <div class="row" id="map"></div>
+        <div class="row">
+            <div class="col s12" id="map"></div>
+            <br />
+            <div class="col s12 center-align">
+                <button class="btn waves-effect waves-light btn-large orange lighten-2" id="render">
+                    Let's Crawl
+                </button>
+            </div>
+        </div>
     </main>
 
     <br />
