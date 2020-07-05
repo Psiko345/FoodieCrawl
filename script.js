@@ -158,19 +158,6 @@ function getLocation() {
     });
 }
 
-function sendText() {
-    const smsURL = "https://api.smsbroadcast.com.au/apiadv.php?username=aBuiDev&password=abuidevDacbietz8590!&to=0413116885&from=FoodieCrawl&message=HI%ANDREW&maxsplit=2"
 
-    $.ajax({
-        url: smsURL,
-        method: "GET",
-        headers: "Access-Control-Allow-Origin: *"
-
-    }).then(function (response) {
-        console.log(response);
-    });
-}
-
-sendText();
 
 
