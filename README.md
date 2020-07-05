@@ -18,7 +18,7 @@ SO THAT I can start tracking my "foodie crawl"
 
 ### Demo:
 
-![Foodie Crawl demo](./assets/foodieCrawl.gif)
+![Foodie Crawl demo](./assets/foodiecrawl.gif)
 
 #### Technical Details
 
