@@ -140,7 +140,7 @@ function getLocation() {
             }
           });
         }
-        document.getElementById("render").onclick = function () {
+        document.getElementById("renderButton").onclick = function () {
           calcRoute();
         };
       }

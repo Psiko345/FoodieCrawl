@@ -37,8 +37,22 @@ h2 {
   color: rgb(238, 110, 115);
 }
 
-#render {
-  margin: 2rem;
+#submit{
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 35px;
+  font-family: "Indie Flower", cursive;
+  line-height: 50px;
+  font-weight: bold;
+}
+
+#renderButton {
+  margin-top: 25px;
+  margin-bottom: 25px;
+  font-size: 35px;
+  font-family: "Indie Flower", cursive;
+  line-height: 50px;
+  font-weight: bold;
 }
 
 #mainContainer {
