@@ -1,6 +1,7 @@
 $("#submit").on("click", (event) => {
   event.preventDefault();
   $("#welcome-page").addClass("hide");
+  $("#siteInformationArea").addClass("hide");
   $("#card").removeClass("hide");
   getLocation();
 });
