@@ -9,17 +9,9 @@ main {
   flex: 1 0 auto;
 }
 
-.card-title card-content z-depth-5 {
-  height: 500px;
-}
-
 #map {
   height: 400px;
   width: 100%;
-}
-
-main {
-  flex: 1 0 auto;
 }
 
 #welcome-page {
@@ -61,6 +53,8 @@ width: 48%;
 width: 48%;
 }
 
+
+/* FoodieCrawl Information Area */
 #siteInformationArea {
   margin-top: 100px;
 }
@@ -69,4 +63,51 @@ width: 48%;
   font-family: "Indie Flower", cursive;
   font-size: 30px;
   color: rgb(238, 110, 115);
+}
+
+
+/* Card Output */
+.card {
+  height: 550px;
+}
+
+.card-image {
+  background-color: lightgrey;
+  object-fit: cover;
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.card-title {
+  line-height: 80px;
+  background-color: rgb(238, 110, 115);
+  color: white;
+  padding: 0;
+  margin: 0;
+}
+
+.card-action {
+  height: 100px;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.cardLoationTitleElement {
+  font-family: "Indie Flower", cursive;
+  color:  rgb(238, 110, 115);
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 50px;
+  padding: 0;
+  margin: 0;
+}
+
+/* FoodieCrawl Map */
+#crawlStartMessage {  
+  font-family: "Indie Flower", cursive;
+  color:  rgb(238, 110, 115);
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 50px;
 }

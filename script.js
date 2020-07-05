@@ -93,6 +93,7 @@ function getLocation() {
         const cardImage = $("<div>").addClass("card-image");
         const cardContent = $("<div>").addClass("card-title center-align");
         const cardAction = $("<div>").addClass("card-action center-align");
+        const cardLoationTitle = $("<div>").addClass("cardLoationTitleElement center-align")
 
         console.log(image, title, address, website);
 
@@ -107,11 +108,13 @@ function getLocation() {
           cardImage.append($("<img>").attr("src", image));
         }
 
-        cardContent.append($("<span>").text(title));
+        cardLoationTitle.append($("<p>").text("Food Crawl Location: " + [i + 1]))
+
+        cardContent.append($("<p>").text(title));
 
         cardAction.append($("<p>").text(address));
 
-        card.append(cardImage, cardContent, cardAction);
+        card.append(cardLoationTitle, cardContent, cardAction, cardImage);
         wrapper.append(card);
         $("#search-results").append(wrapper);
 
