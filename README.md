@@ -7,14 +7,14 @@ An app to organize pubcrawls....but for food!
 ```
 As A person who is hungry
 I WANT to designate a cuisine and a starting location
-SO THAT I can start tracking my "foodie crawl"
+SO THAT I can start tracking my "FoodieCrawl"
 ```
 
 ### Instructions:
 
 1. A user can type in cuisine choice and Location where they want to start the Crawl.
-2. User is presented with three restaurant options within a certain radius of eachother.
-3. The user then clicks the 'Lets Crawl!' button below the map, and the three restaurants will be maked on the map, with directions linking them.
+2. User is presented with three restaurant options within a certain radius of each other.
+3. The user then clicks the 'LET'S CRAWL!' button below the map, and the three restaurants will be maked on the map, with directions linking them.
 
 ### Demo:
 
